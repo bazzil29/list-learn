@@ -3,38 +3,27 @@ import {Switch, Route ,Link} from "react-router-dom";
 import {BrowserRouter} from "react-router-dom";
 
 
-class Hoho extends React.Component {
+class TestClass extends React.Component {
   render(){
     return (
       <div>
+        <Link to={'/modal'}>Mở popup</Link>
         <Switch>
-            <Route exact path = {'/con1'} component={Con1}/>
-            <Route exact path = {'/con2'} component={Con2}/>
+            <Route exact path = {'/modal'} component={Modal}/>
         </Switch>
       </div>
     )
   }
 }
 
-class Con1 extends React.Component {
+class Modal extends React.Component {
   render(){
     return (
-      <div>
-        <Link to={'/con2'}>Con2</Link>
+      <div style={{"background":"red","height":"200px"}}>
+        <Link to={'/popup'}>Đóng</Link>
       </div>
     )
   }
 }
 
-
-class Con2 extends React.Component {
-  render(){
-    return (
-      <div>
-        <Link to={'/con1'}>Con1</Link>
-      </div>
-    )
-  }
-}
-
-export default Hoho
+export default TestClass

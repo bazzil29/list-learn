@@ -3,6 +3,10 @@ import TestClass from "./TestApp";
 import { Switch, Route } from "react-router-dom";
 import "../../App.css"
 class Test extends React.Component {
+    constructor(props, context) {
+        super(props, context);
+        console.log(props);
+     }
     render() {
         return (
             <div className='test-com'>
@@ -12,7 +16,7 @@ class Test extends React.Component {
                         <button><span>&#8594;</span></button>
                     </div>
                     <div className="input">
-                     <input />
+                     <input value={window.location.pathname}/>
                      </div>
 
                 </div>
