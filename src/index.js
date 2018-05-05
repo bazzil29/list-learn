@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Hoho from './sourceCampathonApp/7/TestRoute';
+import Test from './Components/Test/Test';
 import registerServiceWorker from './registerServiceWorker';
 import {BrowserRouter} from "react-router-dom";
 
 ReactDOM.render(
 
   <BrowserRouter>
-       <Hoho />
+       <Test/>
    </BrowserRouter>, document.getElementById('root'));
 registerServiceWorker();

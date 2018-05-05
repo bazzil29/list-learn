@@ -4,6 +4,8 @@ var bodyParser = require('body-parser');
 
 var fs = require('fs');
 
+var copyFile = require('quickly-copy-file');
+
 var app = express();
 
 var cors = require('cors');
@@ -19,7 +21,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/output', function (req, res) {
     // res.json({ querystring_breed: req.query.file });
     console.log(req.query.file);
+
     fs.readFile('sourceCampathonApp/' + req.query.file, function (err, data) {
+        if(req.query.read!='true'){
+            fs.writeFile('Components/Test/TestApp.js', data, function (err){});
+        }
         res.writeHead(200, { 'Content-Type': 'text/html' });
         res.write(data);
         res.end();
