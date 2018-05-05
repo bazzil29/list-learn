@@ -5,7 +5,7 @@ import "../../App.css"
 class Test extends React.Component {
     constructor(props){
         super(props);
-        console.log(props);
+        // console.log(props);
     }
     render() {
         return (
