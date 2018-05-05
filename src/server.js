@@ -23,7 +23,9 @@ app.get('/output', function (req, res) {
     console.log(req.query.file);
 
     fs.readFile('sourceCampathonApp/' + req.query.file, function (err, data) {
-        fs.writeFile('Components/Test/TestApp.js', data, function (err){})
+        if(req.query.read!='true'){
+            fs.writeFile('Components/Test/TestApp.js', data, function (err){});
+        }
         res.writeHead(200, { 'Content-Type': 'text/html' });
         res.write(data);
         res.end();
