@@ -7,7 +7,9 @@ class TestClass extends React.Component {
   render(){
     return (
       <div>
-        <Link to={'/modal'}>Mở popup</Link>
+        <Link to={'/modal'}>
+      <button>Mở popup</button>
+      </Link>
         <Switch>
             <Route exact path = {'/modal'} component={Modal}/>
         </Switch>
@@ -18,8 +20,14 @@ class TestClass extends React.Component {
 
 class Modal extends React.Component {
   render(){
+    const style={
+    "background":"red",
+      "height":"200px",
+      "width":"300px",
+      "margin":"auto"
+    }
     return (
-      <div style={{"background":"red","height":"200px"}}>
+      <div style={style}>
         <Link to={'/popup'}>Đóng</Link>
       </div>
     )
